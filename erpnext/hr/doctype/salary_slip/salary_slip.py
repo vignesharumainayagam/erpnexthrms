@@ -484,7 +484,7 @@ def get_leave_details(employee):
 
 
 		array.append({"leave_type":x.leave_type,"allocated_leave": x.total_leaves_allocated,
-			 "leave_taken": leaves_taken[0][0], "leave_remaining": x.total_leaves_allocated - leaves_taken[0][0]})
+			 "leave_taken": leaves_taken[0][0], "leave_remaining": int(x.total_leaves_allocated) - int(leaves_taken[0][0])})
 
 	return array	
 
