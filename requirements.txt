@@ -1,0 +1,5 @@
+frappe
+unidecode
+pygithub
+googlemaps
+python-stdnum

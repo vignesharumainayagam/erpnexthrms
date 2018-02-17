@@ -1,0 +1,19 @@
+{
+ "content": null, 
+ "creation": "2018-02-16 16:21:23.515101", 
+ "docstatus": 0, 
+ "doctype": "Page", 
+ "idx": 0, 
+ "modified": "2018-02-16 16:21:23.515101", 
+ "modified_by": "Administrator", 
+ "module": "HR", 
+ "name": "hrms-dashboard", 
+ "owner": "Administrator", 
+ "page_name": "HRMS Dashboard", 
+ "roles": [], 
+ "script": null, 
+ "standard": "Yes", 
+ "style": null, 
+ "system_page": 0, 
+ "title": "Dashboard"
+}
