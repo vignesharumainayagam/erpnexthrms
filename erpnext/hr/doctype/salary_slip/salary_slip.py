@@ -464,6 +464,31 @@ def unlink_ref_doc_from_salary_slip(ref_no):
 			ss_doc = frappe.get_doc("Salary Slip", ss)
 			frappe.db.set_value("Salary Slip", ss_doc.name, "journal_entry", "")
 
+# @frappe.whitelist()
+# def get_leave_details(employee):
+# 	array = []
+
+# 	leave_types = frappe.get_list("Leave Allocation", filters={"employee": employee, "docstatus": 1}, 
+# 										fields=["leave_type", "total_leaves_allocated"], 
+# 										limit_page_length= 200)
+
+# 	for x in leave_types:
+
+# 		leaves_taken = frappe.db.sql('''
+# 			select 
+# 				sum(total_leave_days)
+# 			from 
+# 				`tabLeave Application`
+# 			where 
+# 				employee = %s and leave_type = %s and docstatus = 1''', (employee, x.leave_type))
+
+
+# 		array.append({"leave_type":x.leave_type,"allocated_leave": x.total_leaves_allocated,
+# 			 "leave_taken": leaves_taken[0][0], "leave_remaining": int(x.total_leaves_allocated) - int(leaves_taken[0][0])})
+
+# 	return array	
+
+
 @frappe.whitelist()
 def get_leave_details(employee):
 	array = []
@@ -471,20 +496,27 @@ def get_leave_details(employee):
 	leave_types = frappe.get_list("Leave Allocation", filters={"employee": employee, "docstatus": 1}, 
 										fields=["leave_type", "total_leaves_allocated"], 
 										limit_page_length= 200)
+	
 
 	for x in leave_types:
 
-		leaves_taken = frappe.db.sql('''
-			select 
-				sum(total_leave_days)
-			from 
-				`tabLeave Application`
-			where 
-				employee = %s and leave_type = %s and docstatus = 1''', (employee, x.leave_type))
+		lea_taken = frappe.get_list("Leave Application", filters={"employee": employee, "docstatus": 1, "leave_type": x.leave_type}, 
+										fields=["total_leave_days"], 
+										limit_page_length= 200)
+		data = 0
+
+
+
+		for y in lea_taken:
+			data1 = y.total_leave_days
+
+			data = data + data1
 
 
 		array.append({"leave_type":x.leave_type,"allocated_leave": x.total_leaves_allocated,
-			 "leave_taken": leaves_taken[0][0], "leave_remaining": int(x.total_leaves_allocated) - int(leaves_taken[0][0])})
+			 "leave_taken": data, "leave_remaining": int(x.total_leaves_allocated) - int(data)})
+
+
 
 	return array	
 
