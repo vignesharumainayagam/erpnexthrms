@@ -29,11 +29,11 @@ def get_data():
 					"description":_("Upload attendance from a .csv file"),
 					"hide_count": True
 				},
-				{
-					"type": "page",
-					"name": "hrms-dashboard",
-					"label": _("Dashboard")
-				},
+				# {
+				# 	"type": "page",
+				# 	"name": "hrms-dashboard",
+				# 	"label": _("Dashboard")
+				# },
 			]
 		},
 		{

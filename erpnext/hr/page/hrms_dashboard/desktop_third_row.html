@@ -1,35 +1,29 @@
 <div class="card ks-card-widget ks-widget-payment-table">
-    <h5 class="card-header">
-                                        Recent Payment
-
-                                        <div class="ks-controls">
-                                            <a href="#List/Payment Entry/List" class="ks-control-link">View all</a>
-                                        </div>
-                                    </h5>
+    <h5 class="card-header"> Expense Claims
+        <div class="ks-controls">
+            <a href="#List/Expense Claim/List" class="ks-control-link">View all</a>
+        </div>
+    </h5>
     <div class="card-block">
         <table class="table ks-payment-table">
             <tbody>
-                <!-- {% for (var i=0, l=rec_pay.length; i < l; i++) {  %} -->
+                
+                {% for(var m=0; m< data[0].expense_claims.length; m++) { %}
 
                 <tr>
                     <td class="ks-text-bold ks-text-no-wrap">
-                        <!-- {{rec_pay[i].party_name}} -->Ggoogle
+
+                    {{data[0].expense_claims[m].employee_name}}
+
                     </td>
                     <td class="ks-text-light">
 
-                    <!-- {{rec_pay[i].name}} -->
-                    Vicky
-                </td>
-                    <td class="ks-text-bold"> 
-                    <!-- {{rec_pay[i].received_amount}} -->
-                    BPL
-                </td>
-                    <td class="ks-text-light ks-text-right ks-text-no-wrap">
-                    <!-- 1 days ago -->
-                    qwe
+                    {{data[0].expense_claims[m].total_claimed_amount}}
+                    
                 </td>
                 </tr>
-                    <!-- {% } %} -->
+
+                {% } %}
     
             </tbody>
         </table>

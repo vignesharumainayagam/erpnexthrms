@@ -5,16 +5,17 @@
         </div>
         <div class="payment-simple-amount-item-body">
             <div class="payment-simple-amount-item-amount">
-                <span class="ks-amount">1</span>
+                <span class="ks-amount">{{data[0].present}}</span>
                 <span class="ks-amount-icon  fa fa-arrow-circle-up"></span>
             </div>
             <div class="payment-simple-amount-item-description">
-                    Empoyees Present Today
+                Empoyees Present Today
                 <!-- <span class="ks-progress-type">(+$1.89)</span> -->
             </div>
         </div>
     </div>
 </div>
+
 <div class="col-lg-3 col-md-6">
     <div class="card ks-widget-payment-simple-amount-item ks-green">
         <div class="payment-simple-amount-item-icon-block">
@@ -22,7 +23,7 @@
         </div>
         <div class="payment-simple-amount-item-body">
             <div class="payment-simple-amount-item-amount">
-                <span class="ks-amount">44</span>
+                <span class="ks-amount">{{data[0].absent}}</span>
                 <span class="ks-amount-icon  fa fa-arrow-circle-up"></span>
             </div>
             <div class="payment-simple-amount-item-description">
@@ -32,18 +33,19 @@
         </div>
     </div>
 </div>
+
 <div class="col-lg-3 col-md-6">
     <div class="card ks-widget-payment-simple-amount-item ks-pink">
         <div class="payment-simple-amount-item-icon-block">
-            <span class="facolor fa fa-user-plus"></span>
+            <span class="facolor fa fa-users"></span>
         </div>
         <div class="payment-simple-amount-item-body">
             <div class="payment-simple-amount-item-amount">
-                <span class="ks-amount">1</span>
-                <span class="ks-amount-icon  fa fa-arrow-circle-down"></span>
+                <span class="ks-amount">{{data[0].onleave}}</span>
+                <span class="ks-amount-icon  fa fa-arrow-circle-up"></span>
             </div>
             <div class="payment-simple-amount-item-description">
-                 Expense Claims   
+                Empoyees on leave Today
                 <!-- <span class="ks-progress-type">(+$1.89)</span> -->
             </div>
         </div>
@@ -56,7 +58,7 @@
         </div>
         <div class="payment-simple-amount-item-body">
             <div class="payment-simple-amount-item-amount">
-                <span class="ks-amount">44</span>
+                <span class="ks-amount">{{data[0].open_app}}</span>
                 <span class="ks-amount-icon  fa fa-arrow-circle-up"></span>
             </div>
             <div class="payment-simple-amount-item-description">

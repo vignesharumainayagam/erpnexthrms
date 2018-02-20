@@ -3,19 +3,19 @@
 
 	<div class="row dashrow">
 		
-		{{frappe.render_template("desktop_first_row")}}
+		{{frappe.render_template("desktop_first_row", {data: data})}}
 
 	</div>
 
 	<div class="row dashrow">
 		<div class="col-xl-8 col-md-8">
-		{{frappe.render_template("desktop_third_row")}}
+		{{frappe.render_template("desktop_third_row", {data: data})}}
 			
 		</div>
 	
 
 		<div class="col-xl-4 col-md-4">
-		{{frappe.render_template("desktop_second_row")}}
+		{{frappe.render_template("desktop_second_row", {data: data})}}
 			
 		</div>
 
@@ -29,7 +29,7 @@
 
 	<div class="row dashrow">
 		
-		{{frappe.render_template("desktop_fourth_row")}}
+		{{frappe.render_template("desktop_fourth_row", {data: data})}}
 
 	</div>
 
